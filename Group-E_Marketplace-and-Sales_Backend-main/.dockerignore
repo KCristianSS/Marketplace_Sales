@@ -1,0 +1,13 @@
+.git
+.env
+*.env
+credentials
+**/service-account*.json*
+project-*.json
+sistema-ventas-*.json
+**/__pycache__
+.pytest_cache
+.venv
+venv
+node_modules
+.audit/

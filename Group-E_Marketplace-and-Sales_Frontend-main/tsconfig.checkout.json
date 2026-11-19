@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": { "types": ["vite/client"] },
+  "include": [
+    "src/components/checkout/CheckoutModal.vue",
+    "src/components/DeliveryMethodSelector.vue",
+    "src/views/admin/AdminView.vue",
+    "src/components/admin/ShippingManager.vue",
+    "src/stores/cart.ts"
+  ],
+  "references": []
+}

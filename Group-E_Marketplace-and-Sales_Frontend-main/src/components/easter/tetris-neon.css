@@ -1,0 +1,135 @@
+/* Hyperdrive: CSS scenery stays behind the high-contrast, flat gameplay plane. */
+.tetris-root { background: #070915; isolation: isolate; }
+.tetris-aurora { opacity: .8; background: radial-gradient(ellipse at 65% 40%, hsla(var(--level-hue), 90%, 55%, .28), transparent 52%), radial-gradient(ellipse at 10% 90%, #0b666a55, transparent 42%); }
+.neon-stars, .neon-grid, .neon-orbit { position: absolute; pointer-events: none; z-index: -1; }
+.neon-stars { inset: 0; opacity: .5; background-image: radial-gradient(1px 1px at 20px 30px, #cffafe 95%, transparent), radial-gradient(1px 1px at 130px 110px, #c4b5fd 95%, transparent), radial-gradient(2px 2px at 70px 180px, #ffffff70 95%, transparent); background-size: 210px 230px, 310px 310px, 390px 370px; }
+.neon-grid { left: -50%; width: 200%; height: 70%; bottom: -30%; transform: perspective(400px) rotateX(62deg); background-image: linear-gradient(hsla(var(--level-hue), 80%, 60%, .2) 1px, transparent 1px), linear-gradient(90deg, hsla(var(--level-hue), 80%, 60%, .2) 1px, transparent 1px); background-size: 60px 60px; mask-image: linear-gradient(transparent, black 65%); animation: neon-grid-travel 8s linear infinite; }
+.neon-orbit { width: 70vw; height: 70vw; max-width: 1000px; max-height: 1000px; right: -24vw; top: -20vw; border: 1px solid hsla(var(--level-hue), 80%, 70%, .15); border-radius: 50%; box-shadow: 0 0 0 70px #a78bfa05, 0 0 0 140px #a78bfa04, inset 0 0 120px #a78bfa05; }
+.tetris-topbar { z-index: 3; padding: 20px 32px; border-bottom: 1px solid #ffffff09; margin-bottom: 12px; }
+.neon-edition { font-size: 9px; color: #94a3b8; letter-spacing: .3em; margin-left: 12px; }
+.tetris-icon-btn { background: #ffffff05; border-color: #ffffff15; font-size: 11px; }
+.tetris-icon-btn[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+.neon-lobby { position: relative; z-index: 1; display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(30px, 6vw, 100px); width: min(1080px, 90%); margin: auto; padding: 25px 0 40px; overflow-y: auto; }
+.neon-kicker { display: flex; align-items: center; gap: 8px; color: #b5b6d3; font-size: 10px; font-weight: 800; letter-spacing: .18em; }
+.neon-kicker > span { width: 6px; height: 6px; border-radius: 50%; background: #5eead4; box-shadow: 0 0 14px #5eead4; }
+.neon-hero h1 { margin: 23px 0; font-size: clamp(50px, 6.5vw, 88px); font-weight: 950; line-height: .98; letter-spacing: -.065em; color: #f5f3ff; }
+.neon-hero h1 em { font-style: normal; color: var(--accent); background: linear-gradient(100deg, #f0abfc, var(--accent) 60%, #67e8f9); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 25px var(--accent-soft)); }
+.neon-description { color: #a4adc5; font-size: 16px; line-height: 1.8; }
+.neon-features { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 22px; color: #d5d8e8; font-size: 11px; }
+.neon-features span { display: flex; gap: 7px; align-items: center; }
+.neon-features svg { width: 15px; color: var(--accent); }
+.neon-sculpture { position: relative; height: 180px; margin-top: 24px; perspective: 600px; }
+.neon-piece { position: absolute; display: grid; grid-template-columns: repeat(4, 30px); grid-auto-rows: 30px; gap: 3px; transform: rotate(-12deg) rotateY(-18deg) rotateX(18deg); animation: neon-float 6s ease-in-out infinite alternate; filter: drop-shadow(0 15px 20px #0008); }
+.neon-piece i { border-radius: 5px; background: linear-gradient(145deg, #ffffffa0, var(--piece-color) 35%, var(--piece-dark)); box-shadow: inset 2px 2px 0 #ffffff80, inset -3px -3px 0 #0005, 4px 6px 0 var(--piece-dark), 0 0 22px color-mix(in srgb, var(--piece-color), transparent 75%); }
+.piece-0 { left: 14%; top: 10px; }
+.piece-1 { left: 49%; top: 28px; animation-delay: -2s; }
+.piece-2 { left: 80%; top: -30px; scale: .7; animation-delay: -4s; }
+.piece-3 { left: 0; top: 85px; scale: .6; animation-delay: -1s; }
+.piece-4 { left: 70%; top: 105px; scale: .6; animation-delay: -3s; }
+.neon-sculpture-caption { position: absolute; bottom: 0; left: 10%; font: 9px monospace; letter-spacing: .3em; color: #777d9e; }
+.neon-launch { align-self: center; padding: 30px; border: 1px solid #ffffff18; border-radius: 24px; background: linear-gradient(140deg, #ffffff09, #ffffff02); backdrop-filter: blur(20px); box-shadow: 0 24px 80px #0004, inset 0 1px #ffffff08; }
+.neon-mode-list { display: grid; gap: 10px; margin-top: 20px; }
+.neon-mode-list button { display: flex; align-items: center; gap: 15px; width: 100%; padding: 17px 15px; border: 1px solid #ffffff12; border-radius: 14px; background: #07091560; text-align: left; transition: border-color .2s, background .2s, transform .2s; }
+.neon-mode-list button:hover { background: #ffffff08; transform: translateX(3px); }
+.neon-mode-list button[aria-pressed="true"] { border-color: var(--accent); background: linear-gradient(110deg, var(--accent-soft), #0a0d21); box-shadow: 0 0 24px hsla(var(--level-hue), 80%, 60%, .09); }
+.neon-mode-icon { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid #ffffff15; border-radius: 12px; color: var(--accent); background: #ffffff06; }
+.neon-mode-icon svg { width: 21px; }
+.neon-mode-list strong { display: block; font-size: 17px; letter-spacing: -.025em; color: #f8fafc; }
+.neon-mode-list small { display: block; margin-top: 4px; font-size: 11px; color: #a4adc5; }
+.neon-radio { width: 15px; height: 15px; border: 1px solid #ffffff35; border-radius: 50%; margin-left: auto; flex-shrink: 0; }
+[aria-pressed="true"] > .neon-radio { border: 4px solid var(--accent); background: #fff; box-shadow: 0 0 12px var(--accent-soft); }
+.neon-theme-label { margin-top: 25px; }
+.neon-themes { display: flex; gap: 7px; margin-top: 12px; }
+.neon-themes button { flex: 1; display: flex; justify-content: center; align-items: center; gap: 6px; padding: 9px 4px; border-radius: 8px; border: 1px solid #ffffff12; font-size: 10px; color: #a4adc5; }
+.neon-themes button[aria-pressed="true"] { color: white; border-color: var(--swatch); background: #ffffff06; }
+.neon-themes i { width: 7px; height: 7px; border-radius: 50%; background: var(--swatch); box-shadow: 0 0 8px var(--swatch); }
+.neon-launch-button { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; padding: 19px 14px; margin-top: 26px; border-radius: 12px; background: linear-gradient(110deg, #c4b5fd, #a5f3fc); color: #11152e; font-size: 13px; font-weight: 900; letter-spacing: .08em; box-shadow: 0 6px 0 #555088, 0 8px 35px #a78bfa30; transition: transform .2s, box-shadow .2s; }
+.neon-launch-button:hover { transform: translateY(-2px); box-shadow: 0 8px 0 #555088, 0 12px 45px #a78bfa55; }
+.neon-launch-button:active { transform: translateY(4px); box-shadow: 0 2px 0 #555088; }
+.neon-launch-button svg { width: 17px; fill: currentColor; }
+.neon-launch-button kbd { color: #414769; border-color: #41476940; font-size: 9px; }
+.neon-launch-hint { text-align: center; color: #8490ad; font-size: 10px; line-height: 1.8; margin-top: 18px; }
+.tetris-stage { gap: 24px; grid-template-columns: minmax(155px, 205px) auto minmax(155px, 205px); overflow-y: auto; padding-bottom: 25px; }
+.tetris-board-wrap { flex-direction: column; justify-content: flex-start; min-width: 0; }
+.tetris-board-shell { height: min(calc(100dvh - 160px), 680px); flex-shrink: 0; border-radius: 15px; padding: 5px; }
+.tetris-board { border-radius: 11px; }
+.tetris-session { margin: 0 0 8px; padding: 8px 12px; border: 1px solid #ffffff10; border-radius: 10px; background: #ffffff04; }
+.tetris-session span { text-transform: uppercase; letter-spacing: .12em; font-size: 9px; }
+.tetris-panel { border-radius: 13px; border-color: #ffffff12; background: linear-gradient(135deg, #ffffff08, #ffffff02); box-shadow: 0 8px 30px #0002; padding: 13px; }
+.tetris-side { gap: 10px; }
+.tetris-label { font-size: 9px; color: #a7afc9; }
+.tetris-hint { color: #8f9bb4; font-size: 10px; line-height: 1.5; }
+.tetris-score { font-size: 34px; letter-spacing: -.05em; }
+.tetris-best { font-size: 10px; margin-top: 8px; }
+.neon-rank { display: flex; flex-direction: column; gap: 6px; margin-top: 14px; }
+.neon-rank span { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--accent); font-weight: 800; text-transform: uppercase; letter-spacing: .14em; }
+.neon-rank svg { width: 14px; height: 14px; }
+.neon-rank small { color: #8f9bb4; font-size: 9px; }
+.tetris-progress, .tetris-fever { height: 5px; margin-top: 7px; }
+.tetris-overdrive { border: 1px solid #67e8f930; min-height: 38px; }
+.tetris-overdrive:not(:disabled) { background: linear-gradient(100deg, #a5f3fc, #c4b5fd); box-shadow: 0 0 25px #67e8f940; animation: neon-ready 1.8s ease-in-out infinite; }
+.tetris-buffs li { font-size: 11px; }
+.tetris-overlay { z-index: 6; background: #080b20e8; backdrop-filter: blur(10px); justify-content: safe center; }
+.tetris-overlay-title { letter-spacing: -.04em; }
+.tetris-cta { border-radius: 10px; background: linear-gradient(100deg, #c4b5fd, #a5f3fc); color: #11152e; animation: none; }
+.neon-pause-icon, .neon-result-medal { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; width: 80px; min-height: 80px; border-radius: 22px; background: #a78bfa15; border: 1px solid #a78bfa40; color: #c4b5fd; }
+.neon-result-medal { color: #fde68a; background: #facc1510; border-color: #facc1540; padding: 12px; }
+.neon-result-medal svg { width: 30px; height: 30px; }
+.neon-result-medal span { font-size: 10px; text-transform: uppercase; letter-spacing: .12em; }
+.neon-fever-label { position: absolute; z-index: 2; top: 10px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 6px; padding: 6px 12px; white-space: nowrap; border-radius: 20px; background: #251232e6; border: 1px solid #f0abfc88; color: #f0abfc; font-size: 9px; letter-spacing: .15em; pointer-events: none; }
+.neon-fever-label svg { width: 13px; height: 13px; }
+.neon-fever-label strong { color: #fde68a; }
+.neon-achievement { position: absolute; z-index: 10; bottom: 25px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 12px; width: max-content; max-width: calc(100% - 30px); border: 1px solid #fde68a55; border-radius: 13px; padding: 13px 20px; background: #15172ef5; box-shadow: 0 10px 50px #0008, 0 0 25px #fde68a10; pointer-events: none; }
+.neon-achievement svg { width: 23px; color: #fde68a; flex-shrink: 0; }
+.neon-achievement small { display: block; color: #fde68a; font-size: 8px; letter-spacing: .2em; margin-bottom: 4px; }
+.neon-achievement strong { display: block; font-size: 12px; font-weight: 700; }
+.neon-toast-enter-active, .neon-toast-leave-active { transition: opacity .3s, margin-bottom .3s; }
+.neon-toast-enter-from, .neon-toast-leave-to { opacity: 0; margin-bottom: -12px; }
+@keyframes neon-float { to { transform: translateY(-18px) rotate(6deg) rotateY(15deg) rotateX(10deg); } }
+@keyframes neon-grid-travel { to { background-position: 0 60px; } }
+@keyframes neon-ready { 50% { box-shadow: 0 0 35px #a78bfa65; } }
+@media (max-width: 900px) {
+  .tetris-topbar { padding: 12px 16px; margin-bottom: 8px; }
+  .neon-edition { display: none; }
+  .neon-lobby { gap: 25px; width: 92%; grid-template-columns: 1fr 1fr; }
+  .neon-hero h1 { font-size: 54px; }
+  .neon-launch { padding: 20px; }
+  .neon-sculpture { scale: .8; transform-origin: left; }
+  .tetris-stage { grid-template-columns: auto; padding: 0 10px 12px; }
+  .tetris-board-shell { height: min(calc(100dvh - 240px), 680px); max-height: calc((100vw - 36px) * 2); }
+  .neon-achievement { bottom: 82px; }
+  .tetris-touch { flex-shrink: 0; }
+}
+@media (max-width: 600px) {
+  .neon-lobby { display: block; padding: 12px 0 26px; margin: 0 auto; }
+  .neon-hero h1 { font-size: 50px; margin: 16px 0 12px; }
+  .neon-hero h1 br { display: none; }
+  .neon-description { font-size: 13px; line-height: 1.6; }
+  .neon-sculpture, .neon-features { display: none; }
+  .neon-launch { margin-top: 22px; padding: 18px; }
+  .neon-kicker { font-size: 8px; }
+  .neon-mode-list { margin-top: 12px; gap: 7px; }
+  .neon-mode-list button { padding: 10px 12px; }
+  .neon-mode-list strong { font-size: 15px; }
+  .neon-theme-label { margin-top: 18px; }
+  .neon-launch-button { padding: 15px; margin-top: 20px; }
+  .tetris-icon-btn { width: 30px; height: 30px; border-radius: 9px; }
+  .tetris-topbar-actions { gap: 5px; }
+  .tetris-logo { gap: 4px; letter-spacing: .12em; }
+  .tetris-logo strong { font-size: 16px; }
+  .tetris-logo span { font-size: 10px; }
+  .tetris-touch { grid-template-columns: repeat(5, 1fr); gap: 5px; padding: 6px 10px 10px; }
+  .tetris-touch button { height: 36px; border-radius: 9px; }
+  .tetris-touch .is-primary { grid-column: span 2; }
+  .tetris-board-shell { height: min(calc(100dvh - 265px), 680px); }
+  .neon-achievement { bottom: 102px; }
+  .tetris-overlay { padding: 12px; gap: 8px; }
+  .neon-result-medal { width: 55px; min-height: 55px; padding: 7px; }
+  .neon-result-medal svg { width: 20px; height: 20px; }
+  .tetris-summary { margin-top: 0; gap: 4px; }
+  .tetris-cta, .tetris-ghost-btn { padding: 8px 12px; }
+}
+.is-calm *, .is-calm *::before, .is-calm *::after { animation: none !important; transition: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  .tetris-root *, .tetris-root *::before, .tetris-root *::after { animation: none !important; transition: none !important; }
+}

@@ -48,3 +48,9 @@ ENV/
 .audit/
 
 .env
+
+node_modules/
+venv/
+.venv/
+__pycache__/
+.env

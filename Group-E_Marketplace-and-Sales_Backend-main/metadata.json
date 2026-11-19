@@ -1,0 +1,8 @@
+{
+  "name": "MaxiConecta — Marketplace y Ventas",
+  "description": "Plataforma omnicanal de Marketplace, Punto de Venta (POS) y Panel Administrativo (Grupo E)",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

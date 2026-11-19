@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": { "types": ["vite/client"] },
+  "include": [
+    "src/api/vales.ts",
+    "src/components/TarjetasRegaloPanel.vue",
+    "src/views/customer/GiftCardsView.vue",
+    "src/components/checkout/CheckoutModal.vue",
+    "src/views/admin/AdminView.vue",
+    "src/stores/cart.ts"
+  ],
+  "references": []
+}

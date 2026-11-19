@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "types": [
+      "vite/client"
+    ]
+  },
+  "include": [
+    "src/components/orders/*.vue",
+    "src/components/orders/*.test.ts",
+    "src/stores/cart.ts",
+    "src/stores/cart.test.ts",
+    "src/views/customer/AccountView.vue",
+    "src/App.vue"
+  ],
+  "references": []
+}
